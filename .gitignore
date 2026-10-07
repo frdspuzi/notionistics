@@ -1,0 +1,11 @@
+# Private client and business data (see AGENTS.md)
+HANDOFF.md
+ORDERS_REFERENCE.md
+fiverr_reviews.csv
+order-confirmations-handoff.md
+clients_map.csv
+integration_orders.csv
+
+# Local Python artifacts
+__pycache__/
+*.py[cod]
