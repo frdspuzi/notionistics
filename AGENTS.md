@@ -8,7 +8,7 @@ Landing page for notionistics.com: one static `index.html`, no build step, serve
 
 ## Identity and voice
 
-Notionistics is an **entity**, a startup team, not a solo freelancer. Write copy in the team voice ("we", "our team"). The team is **led by Firdaus** (frdspuzi), who founded it in 2020; name him as a person in the hero ("led by Firdaus") and the About section only.
+Notionistics is an **entity**, a startup team, not a solo freelancer. Write copy in the team voice ("we", "our team"). The team is **led by Firdaus** (frdspuzi); name him as a person in the hero ("led by Firdaus") and the About section only. First integration job completed June 2023.
 
 Services, in priority order: software solutions (Zapier / Notion / Typeform integrations, scripting), then Notion-styled avatars.
 
