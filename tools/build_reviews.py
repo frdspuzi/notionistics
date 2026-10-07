@@ -58,84 +58,84 @@ INTEGRATION_FLOWS = {
     "dvorakj": {
         "label": "Schematic of the integration: Typeform to Zapier to Kit",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("app-kit", "Kit")],
-        "note": "10 quiz paths · 10 email sequences",
+        "note": "Connected a 10-result quiz so each customer automatically receives the right follow-up email series for their answers.",
     },
     "donstein630": {
         "label": "Schematic of the integration: Typeform to Zapier to branching emails",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("app-kit", "Kit")],
-        "note": "Income-range routing & branches",
+        "note": "Updated survey logic so different answers guide people down separate follow-up paths with zero duplicate emails.",
     },
     "mhome12345": {
         "label": "Schematic of the integration: Zapier to Notion to email alerts",
         "nodes": [("app-zapier", "Zapier"), ("app-notion", "Notion"), ("i-mail", "Email alerts")],
-        "note": "Polling delay diagnosed & fixed",
+        "note": "Diagnosed why email alerts were delayed, fixed missing form fields, and got instant notifications delivering reliably.",
     },
     "designmediaz": {
         "label": "Schematic of the integration: Typeform to Zapier to Shopify",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("app-shopify", "Shopify")],
-        "note": "Product catalog sync restored",
+        "note": "Repaired broken product order forms so customer selections and checkout details sync straight into the store again.",
     },
     "lesj82": {
         "label": "Schematic of the integration: Typeform to Zapier to Custom API",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("i-code", "Custom API (POST)")],
-        "note": "Webhook POST payload verified",
+        "note": "Form submissions were failing to connect to their partner system. Re-formatted name fields and restored data delivery.",
     },
     "antoine123nyc": {
         "label": "Schematic of the integration: Typeform to Zapier to notifications",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("i-mail", "Notifications")],
-        "note": "Branching intake & instant alerts",
+        "note": "Built custom intake routing and automated alerts so the team gets notified immediately on every new booking enquiry.",
     },
     "sdgreal": {
         "label": "Schematic of the integration: Outlook to Zapier to Notion",
         "nodes": [("app-outlook", "Outlook"), ("app-zapier", "Zapier"), ("app-notion", "Notion")],
-        "note": "Order cards & 14-day delay Zap",
+        "note": "Order emails were creating cluttered cards in Notion. Cleaned up card titles and added an automated 14-day follow-up.",
     },
     "pursuitcompany": {
         "label": "Schematic of the integration: PDF products to Squarespace to downloads",
         "nodes": [("i-file", "Digital PDFs"), ("i-cart", "Squarespace"), ("i-cloud", "Auto Downloads")],
-        "note": "Shop setup & digital fulfillment",
+        "note": "Set up an automated digital shop so buyers receive their downloadable PDF files immediately after checkout.",
     },
     "angelajudith1": {
         "label": "Schematic of the integration: Outlook to Zapier to Notion",
         "nodes": [("app-outlook", "Outlook"), ("app-zapier", "Zapier"), ("app-notion", "Notion")],
-        "note": "Subfolder ID duplicate fix",
+        "note": "Moving emails into subfolders was creating duplicate cards in Notion. Fixed tracking IDs to stop duplicate entries.",
     },
     "heartwebdesign": {
         "label": "Schematic of the integration: Typeform to Zapier to Notion",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("app-notion", "Notion")],
-        "note": "One Notion property per question",
+        "note": "Client intake answers were being copied by hand. Automated form responses directly into individual Notion properties.",
     },
     "jonathanbent122": {
         "label": "Schematic of the integration: Squarespace to Zapier to Google Drive",
         "nodes": [("i-cart", "Squarespace"), ("app-zapier", "Zapier"), ("app-drive", "Google Sheets")],
-        "note": "Order sync to central spreadsheet",
+        "note": "New store orders were not logging automatically. Connected new purchases to populate the central team spreadsheet instantly.",
     },
     "federicoboc": {
         "label": "Schematic of the integration: Typeform to Zapier to CRM",
         "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("i-users", "Engagebay CRM")],
-        "note": "Form answers mapped to CRM",
+        "note": "Customer questionnaire responses were missing in CRM. Connected form submissions directly to matching contact profiles.",
     },
     "erikaepuise": {
         "label": "Schematic of the integration: Notion database formulas and dashboard",
         "nodes": [("app-notion", "Notion DB"), ("i-code", "Formulas"), ("i-db", "Dashboard")],
-        "note": "Finance template formula fixes",
+        "note": "Finance tracker had broken formulas and progress views. Fixed database calculations and cleaned up layout views.",
     },
     "leerichards263": {
         "label": "Schematic of the integration: Google Sheets to Zapier to Notion",
         "nodes": [("app-drive", "Google Sheets"), ("app-zapier", "Zapier"), ("app-notion", "Notion")],
-        "note": "Column type mismatch resolved",
+        "note": "Spreadsheet entries stopped appearing in Notion due to a changed column format. Fixed field types and secured the database.",
     },
     "mallaryk": {
         "label": "Schematic of the integration: Notion client portal and permissions",
         "nodes": [("app-notion", "Notion Portal"), ("i-users", "Permissions"), ("i-db", "Client Views")],
-        "note": "Client portal access & sharing",
+        "note": "Client portal was exposing shared views across clients. Configured database permissions so each client sees only their own data.",
     },
 }
 
 DEFAULT_FLOW = {
     "label": "Schematic of the integration: Typeform to Zapier to Notion",
     "nodes": [("app-typeform", "Typeform"), ("app-zapier", "Zapier"), ("app-notion", "Notion")],
-    "note": "Workflow verified & syncing",
+    "note": "Rebuilt workflow connection and verified form responses map to the right fields without data loss.",
 }
 
 
@@ -149,7 +149,8 @@ def flow_art(username):
         items.append(f'<span class="node"><svg class="{icon_cls}" aria-hidden="true"><use href="#{icon_id}"/></svg> {html.escape(text)}</span>')
     nodes_html = "".join(items)
     note = flow.get("note")
-    note_html = f'<div class="snap-note"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> {html.escape(note)}</div>' if note else ""
+    note_html = (f'<div class="snap-note"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg> '
+                 f'<span><strong>Fixed:</strong> {html.escape(note)}</span></div>') if note else ""
     return (f'<div class="review-art review-flow" role="img" aria-label="{html.escape(flow["label"])}">'
             f'<div class="snap-bar"><span></span><span></span><span></span></div>'
             f'<div class="v-flow">{nodes_html}</div>'
