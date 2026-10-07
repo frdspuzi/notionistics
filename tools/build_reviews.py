@@ -167,7 +167,7 @@ def card(row, repeat):
         art = flow_art(row["username"])
         has_art = True
     elif face:
-        art = (f'<div class="review-art"><img src="{face}" width="200" height="240" loading="lazy" '
+        art = (f'<div class="review-art"><img src="{face}" width="200" height="240" loading="lazy" draggable="false" '
                f'alt="Their Notion-style avatar, drawn by Notionistics"></div>')
         has_art = True
     else:
