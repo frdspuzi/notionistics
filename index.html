@@ -171,6 +171,18 @@
     .snap .arrow { width: 14px; height: 14px; }
     .snap-note { display: flex; gap: 6px; align-items: center; margin-top: 10px; font-size: 12px; color: #2b7a4b; }
     .case-meta { margin-top: 14px !important; font-size: 13px !important; color: var(--accent) !important; font-weight: 500; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .project-card { display: flex; flex-direction: column; min-width: 0; padding: 0; overflow: clip; }
+    .project-visual { display: block; width: 100%; height: auto; aspect-ratio: 9 / 4; background: var(--band); border-bottom: 1px solid var(--line); }
+    .project-body { display: flex; flex: 1; flex-direction: column; padding: 24px; }
+    .project-topline { display: flex; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .project-topline h3 { margin: 0; }
+    .status { flex: none; padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+    .project-card p { margin: 0 0 18px; }
+    .project-stack { margin-top: auto; color: var(--muted); font-size: 13px; }
+    .project-link { display: inline-flex; gap: 5px; align-items: center; margin-top: 18px; color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .project-link:hover { text-decoration: underline; }
+    @media (max-width: 800px) { .project-grid { grid-template-columns: 1fr; } }
     .sub { margin: 56px 0 24px; font-size: 20px; font-weight: 600; }
     .steps { counter-reset: step; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
     .step { counter-increment: step; padding-top: 16px; border-top: 2px solid var(--text); }
@@ -405,6 +417,7 @@
     <a href="#" class="brand"><img src="assets/logo.png" width="600" height="147" alt="Notionistics"></a>
     <div class="nav-links">
       <a href="#software">Software</a>
+      <a href="#projects">Projects</a>
       <a href="#avatars">Avatars</a>
       <a href="#pricing">Pricing</a>
       <a href="#reviews">Reviews</a>
@@ -473,6 +486,51 @@
       <div class="step"><h3>Scope confirmed</h3><p>We check if we can fix it and confirm the price. Small fixes are US$15. Bigger jobs are quoted case by case.</p></div>
       <div class="step"><h3>Fixed in ~2 days</h3><p>We fix it and document what we changed. Add a 1-day rush for +US$10.</p></div>
       <div class="step"><h3>1 revision</h3><p>If something's still off, we sort it out.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Work in progress</span>
+      <h2>Products we're <em>building</em>.</h2>
+      <p>Our own projects are where we test ideas beyond client work—useful tools, careful automation, and products shaped by real problems.</p>
+    </div>
+    <div class="project-grid">
+      <article class="tile project-card">
+        <svg class="project-visual" viewBox="0 0 360 160" role="img" aria-label="Abstract preview of Firdaus's personal website">
+          <rect width="360" height="160" fill="#f6f8fa"/><rect x="28" y="24" width="304" height="112" rx="10" fill="#fff" stroke="#d0d7de"/><circle cx="50" cy="44" r="8" fill="#0969da"/><rect x="66" y="39" width="78" height="9" rx="4.5" fill="#24292f"/><rect x="48" y="66" width="118" height="48" rx="6" fill="#ddf4ff"/><rect x="180" y="66" width="132" height="9" rx="4.5" fill="#afb8c1"/><rect x="180" y="84" width="105" height="7" rx="3.5" fill="#d0d7de"/><rect x="180" y="99" width="122" height="7" rx="3.5" fill="#d0d7de"/><rect x="48" y="122" width="64" height="4" rx="2" fill="#0969da"/>
+        </svg>
+        <div class="project-body">
+          <div class="project-topline"><h3>Firdauspuzi.com</h3><span class="status">Live · evolving</span></div>
+          <p>A personal portfolio and living dashboard for writing, photography, videos, learning prompts, and source-grounded research briefs.</p>
+          <div class="project-stack">Vite · React · TypeScript · GitHub Actions</div>
+          <a class="project-link" href="https://firdauspuzi.com/" target="_blank" rel="noopener">Visit project <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="tile project-card">
+        <svg class="project-visual" viewBox="0 0 360 160" role="img" aria-label="Abstract map preview of CariMakanHalal">
+          <rect width="360" height="160" fill="#f5fbf8"/><path d="M0 36 90 54l84-34 88 42 98-28v126H0Z" fill="#e1f2e8"/><path d="M76 0 92 160M190 0l-28 160M0 96l360-18" stroke="#fff" stroke-width="12"/><path d="M0 96l360-18M76 0 92 160M190 0l-28 160" stroke="#c8e3d4" stroke-width="2"/><g fill="#15803d"><path d="M104 54c-14 0-25 11-25 25 0 19 25 40 25 40s25-21 25-40c0-14-11-25-25-25Zm0 35a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"/><circle cx="260" cy="64" r="7"/><circle cx="292" cy="112" r="7"/></g><rect x="190" y="106" width="132" height="30" rx="15" fill="#fff" stroke="#b7d7c5"/><circle cx="209" cy="121" r="6" fill="#15803d"/><rect x="222" y="116" width="78" height="9" rx="4.5" fill="#6b7280"/>
+        </svg>
+        <div class="project-body">
+          <div class="project-topline"><h3>CariMakanHalal</h3><span class="status">In development</span></div>
+          <p>A map-based directory for browsing JAKIM-certified food premises around Klang Valley, with search, nearby verification, and shareable listings.</p>
+          <div class="project-stack">Next.js · React · TypeScript · Google Maps</div>
+          <span class="project-link">Private preview</span>
+        </div>
+      </article>
+      <article class="tile project-card">
+        <svg class="project-visual" viewBox="0 0 360 160" role="img" aria-label="Abstract sermon player preview of Khutbah.app">
+          <rect width="360" height="160" fill="#171612"/><rect x="24" y="22" width="200" height="116" rx="8" fill="#26241d"/><circle cx="124" cy="80" r="24" fill="#b99a56"/><path d="m117 66 20 14-20 14Z" fill="#171612"/><rect x="242" y="28" width="94" height="8" rx="4" fill="#b99a56"/><rect x="242" y="48" width="82" height="6" rx="3" fill="#5e594b"/><rect x="242" y="62" width="91" height="6" rx="3" fill="#5e594b"/><rect x="242" y="76" width="75" height="6" rx="3" fill="#5e594b"/><rect x="242" y="104" width="80" height="25" rx="6" fill="#302d25" stroke="#5e594b"/><path d="M252 116h6m4-5v10m4-7v4m4-10v16m4-12v8m4-6v4m4-9v14m4-7v3m4-5v7m4-10v13m4-8v4" stroke="#b99a56" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="project-body">
+          <div class="project-topline"><h3>Khutbah.app</h3><span class="status">Live · evolving</span></div>
+          <p>A Friday-sermon archive pairing Haramain khutbahs with English transcripts, searchable topics, and Quran and hadith reference checks.</p>
+          <div class="project-stack">Vanilla JS · Python · Firebase · AI pipeline</div>
+          <a class="project-link" href="https://khutbah.app/" target="_blank" rel="noopener">Visit project <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
