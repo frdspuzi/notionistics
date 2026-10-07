@@ -10,7 +10,7 @@ Landing page for notionistics.com: one static `index.html`, no build step, serve
 
 Notionistics is an **entity**, a startup team, not a solo freelancer. Write copy in the team voice ("we", "our team"). The team is **led by Firdaus** (frdspuzi); name him as a person in the hero ("led by Firdaus") and the About section only. First integration job completed June 2023.
 
-Services, in priority order: software solutions (Zapier / Notion / Typeform integrations, scripting), then Notion-styled avatars.
+Services, in priority order: software solutions (Zapier / Notion / Typeform integrations, and full project delivery priced by discussion), then Notion-styled avatars. We do not offer a scripting service (removed by the owner). No em dashes anywhere on the page; use commas, colons or full stops.
 
 ## Claims and sources
 
@@ -26,13 +26,21 @@ These five files are **private**: they hold client and business data. They stay 
 
 ## Client privacy
 
-Client portraits and names are personal data. Clients appear on the page only with their consent, credited as "First name L." plus a country flag. Without consent a quote is credited by a masked Fiverr username: first 2 and last 2 characters, the middle replaced by asterisks in the HTML (`.mask` blurs them on screen). The full username never appears in the source. The client archive (`G:\My Drive\Notion\<client name>\`) is source material only.
+Client portraits and names are personal data. Clients appear on the page only with their consent, credited as "First name L." plus a country flag. Without consent a quote is credited by a masked Fiverr username: first 2 and last 2 characters, the middle replaced by asterisks in the HTML (`.mask` blurs them on screen). The full username never appears in the source. The client archive (`G:\My Drive\Notion\<client name>\`) is source material only. Featuring a public figure's avatar (the "Seen in the wild" card) needs the client's or the person's OK: state only what is visible, never imply a commission or endorsement, and keep order numbers, prices and buyer names off the page.
 
 ## Reviews are generated
 
 The reviews marquee between `<!-- reviews:start -->` and `<!-- reviews:end -->` in `index.html` is built from `fiverr_reviews.csv`. To change reviews, edit the CSV (or the rules in the script) and run `python -I tools/build_reviews.py fiverr_reviews.csv index.html`. A reviewer's country needs a flag symbol in the sprite and an entry in the script's `FLAGS` map to be included.
 
 Client avatars on review cards come from `assets/clients/cNN.svg` (neutral names, slimmed copies of the owner's deliveries in `G:\My Drive\Notion\<username>\`, approved by the owner on 2026-10-07). The username → file mapping lives in the private, git-ignored `clients_map.csv`, which the generator reads. Only exact folder-name = username matches are used; a folder holding several people is skipped. Reviews from Israel are excluded by owner decision (Israel is left out of `FLAGS`).
+
+## Fan art is generated
+
+`tools/build_fan_art.py` traces footballer drawings from the owner's Drive folder `.football` (under `G:\My Drive\Notion`) into `assets/fan/*.svg` (vtracer) and rebuilds the wall between `<!-- fan:start -->` and `<!-- fan:end -->`. Add a drawing by listing it in the script's `PICKS` and re-running it. The page shows a quiet strip of 7 (4 on phones), in a random order on each visit; keep it small and faint, it is only fan art.
+
+## Screenshots
+
+`firdaus_fiverr_reference_pack/` (git-ignored, private: copies of the data files plus `screenshots/` of delivered Zaps) is source material. Before publishing a screenshot, look at it: use Zapier flow screenshots that show only step names; skip any that show email addresses, names or inbox contents. Copy used ones to `assets/work/` under neutral names (never a username).
 
 ## Front-end conventions
 

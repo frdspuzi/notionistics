@@ -35,7 +35,7 @@ def credit(row):
 
 def excerpt(text):
     """Verbatim, cut at a sentence boundary when long."""
-    text = " ".join(text.split())
+    text = " ".join(text.split()).replace("—", " - ")  # house style: no em dashes on the page
     if len(text) <= MAX_LEN:
         return text
     cut = max(text.rfind(p, 0, MAX_LEN) for p in (". ", "! ", "? "))
@@ -174,7 +174,7 @@ def card(row, repeat):
     else:
         art = ""
         has_art = False
-    return (f'<figure class="review{" has-art" if has_art else ""}" data-years="{years_ago(row["when"])}">{art}<div class="review-body">'
+    return (f'<figure class="review{" has-art" if has_art else ""}" data-years="{years_ago(row["when"])}" data-kind="{"integration" if is_api else "avatar"}">{art}<div class="review-body">'
             f'<blockquote>"{html.escape(excerpt(row["review"]))}"</blockquote>'
             f'<figcaption>{STARS}<span><svg class="flag" role="img" aria-label="{country}"><use href="#f-{FLAGS[country]}"/></svg> '
             f"{credit(row)} · {kind}</span></figcaption></div></figure>")

@@ -9,3 +9,4 @@ integration_orders.csv
 # Local Python artifacts
 __pycache__/
 *.py[cod]
+firdaus_fiverr_reference_pack/
