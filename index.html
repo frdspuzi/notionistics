@@ -479,6 +479,22 @@
       .mobile-cta .btn { flex: 1; padding: 11px 8px; }
       body { padding-bottom: 72px; }
     }
+
+    /* Phones: same animations, cheaper to draw. Animating border-radius, box-shadow and a blurred header
+       forces a repaint every scroll frame; the transform / opacity / clip-path motion stays as designed. */
+    @media (prefers-reduced-motion: no-preference) and (max-width: 768px) {
+      @supports (animation-timeline: view()) {
+        nav { backdrop-filter: none; background: var(--bg); }
+        @keyframes curtain { from { transform: translateY(30vh); } to { transform: none; } }
+        @keyframes drawer { from { transform: translateX(40vw); } to { transform: none; } }
+        @keyframes tilt { from { transform: perspective(1400px) rotateX(-28deg) translateY(100px); } to { transform: none; } }
+        @keyframes content-lag { from { transform: translateY(80px); opacity: 0; } }
+        @keyframes rise { from { transform: translateY(60px); opacity: 0; } }
+        .parallax, .art, .me, .hero .flow { will-change: transform; }
+        .marquee { contain: paint; }
+        .review { contain: layout paint; }
+      }
+    }
   </style>
 </head>
 <body>
