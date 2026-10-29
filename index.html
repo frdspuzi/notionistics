@@ -665,7 +665,7 @@
         </div>
       </article>
       <article class="tile project-card">
-        <img class="project-visual" src="assets/project-carimakanhalal.png" width="1800" height="800" loading="lazy" alt="Hero page of the CariMakanHalal application">
+        <video class="project-visual" src="assets/project-carimakanhalal.mp4" poster="assets/project-carimakanhalal.png" width="1800" height="800" muted loop playsinline preload="none" aria-label="Launch video of the CariMakanHalal application"></video>
         <div class="project-body">
           <div class="project-topline"><h3>CariMakanHalal</h3><span class="status">Live · evolving</span></div>
           <p>A map-based directory for browsing JAKIM-certified food premises around Klang Valley, with search, nearby verification, and shareable listings.</p>
@@ -851,6 +851,13 @@
   <img alt="">
 </dialog>
 
+<script>
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) e.target.play().catch(function () {}); else e.target.pause(); });
+  }, { threshold: 0.4 }).observe(document.querySelector('video.project-visual'));
+}
+</script>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 <script>
   // Screenshot preview modal: opens in place, closes with the X, Esc or a click on the backdrop.
